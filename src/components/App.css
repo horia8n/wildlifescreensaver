@@ -1,0 +1,420 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  height: 100%;
+  width: 100%; }
+  html body {
+    background-color: #000;
+    color: #ddd;
+    font-size: 12px;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: block; }
+    html body .cl {
+      float: none;
+      clear: both; }
+    html body #root {
+      height: 100%;
+      width: 100%;
+      display: block; }
+
+.App {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative; }
+  .App .header {
+    display: block;
+    position: relative;
+    height: 50px;
+    text-align: right;
+    padding-right: 20px; }
+    .App .header .listButton {
+      display: inline-block;
+      padding: 2px 20px;
+      margin-top: 4px;
+      margin-right: -10px;
+      border: 2px solid #666;
+      box-shadow: 0 0 10px 4px #555;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #000; }
+      .App .header .listButton:hover {
+        border: 2px solid #888;
+        background-color: #333; }
+  .App .dropdownDiv {
+    display: inline-block;
+    position: absolute;
+    height: calc(100% - 50px + 10px);
+    width: 49%;
+    right: 10px;
+    top: 40px;
+    border: 2px solid #666;
+    background: #222;
+    box-shadow: 0 0 10px 4px #555;
+    z-index: 100;
+    text-align: left; }
+    .App .dropdownDiv .listTopDiv {
+      display: block;
+      border-bottom: 1px solid #888;
+      padding-top: 10px;
+      padding-bottom: 1px;
+      margin-bottom: 20px;
+      text-align: right;
+      height: 38px; }
+      .App .dropdownDiv .listTopDiv .listTopButtons {
+        display: inline-block;
+        padding: 2px 4px;
+        text-align: center;
+        width: 140px;
+        margin-top: 4px;
+        margin-right: 2px;
+        border: 1px solid #666;
+        border-bottom: 0;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #333;
+        color: #666; }
+        .App .dropdownDiv .listTopDiv .listTopButtons:hover {
+          border: 1px solid #888;
+          border-bottom: 0;
+          background-color: #333; }
+    .App .dropdownDiv .listWrap {
+      display: block;
+      margin: 0;
+      height: calc(100% - 38px - 20px); }
+      .App .dropdownDiv .listWrap .treeWrap {
+        display: block;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: auto;
+        padding: 20px; }
+        .App .dropdownDiv .listWrap .treeWrap .wait7 {
+          margin-top: 22px;
+          margin-left: 20px; }
+      .App .dropdownDiv .listWrap .filterWrap {
+        height: 100%; }
+        .App .dropdownDiv .listWrap .filterWrap .wait7 {
+          margin-top: 22px;
+          margin-left: 20px; }
+        .App .dropdownDiv .listWrap .filterWrap .filterControls {
+          border-bottom: 2px solid #444;
+          padding-bottom: 2px;
+          height: 35px; }
+          .App .dropdownDiv .listWrap .filterWrap .filterControls .searchFilter {
+            background-color: #000;
+            display: inline-block;
+            border: 1px solid #666;
+            font-size: 16px;
+            color: #ccc;
+            height: 30px;
+            margin: 0 0 0 10px;
+            padding: 2px 4px; }
+          .App .dropdownDiv .listWrap .filterWrap .filterControls .selectFilter {
+            background-color: #000;
+            display: inline-block;
+            border: 1px solid #666;
+            font-size: 16px;
+            color: #aaa;
+            height: 30px;
+            margin: 0 0 0 10px;
+            padding: 2px 4px; }
+        .App .dropdownDiv .listWrap .filterWrap .filteredContent {
+          overflow-y: auto;
+          height: calc(100% - 35px); }
+      .App .dropdownDiv .listWrap .viewedWrap {
+        overflow-y: auto;
+        height: 100%; }
+        .App .dropdownDiv .listWrap .viewedWrap .wait7 {
+          margin-top: 42px;
+          margin-left: 20px; }
+      .App .dropdownDiv .listWrap .item {
+        margin-top: 20px;
+        color: #fff; }
+        .App .dropdownDiv .listWrap .item .LatinName {
+          opacity: 0.7; }
+        .App .dropdownDiv .listWrap .item .filterpictures {
+          display: inline-block;
+          margin-top: 0;
+          padding-top: 6px;
+          border-top: 1px solid #444;
+          min-width: 300px; }
+          .App .dropdownDiv .listWrap .item .filterpictures img {
+            height: 60px;
+            width: auto;
+            margin-right: 10px; }
+    .App .dropdownDiv ul {
+      list-style-type: none;
+      padding-left: 20px; }
+    .App .dropdownDiv li {
+      cursor: pointer; }
+    .App .dropdownDiv ul.list li.viewed {
+      color: #444; }
+    .App .dropdownDiv ul.list li.unviewed {
+      color: #ddd; }
+
+.disp {
+  display: block;
+  width: 100%;
+  height: calc(100% - 50px);
+  z-index: 1;
+  vertical-align: top; }
+  .disp .half {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    vertical-align: top; }
+    .disp .half .wait {
+      display: block;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      text-align: center;
+      line-height: 100%; }
+      .disp .half .wait span {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle; }
+      .disp .half .wait img {
+        vertical-align: middle;
+        text-align: center;
+        opacity: 0.3; }
+    .disp .half .itemDisp {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      vertical-align: top;
+      background-image: linear-gradient(to bottom, #111, #000);
+      border-top: 1px solid #444;
+      border-left: 1px solid #444;
+      border-bottom: 1px solid #343434;
+      border-right: 1px solid #343434;
+      position: relative;
+      padding: 10px;
+      animation: moveRightLeft 1s ease-out forwards; }
+      .disp .half .itemDisp .controls {
+        position: absolute;
+        height: 40px;
+        width: 150px;
+        right: 190px;
+        top: 20px;
+        border: 2px solid #343434;
+        background: #000;
+        text-align: center;
+        padding-top: 10px;
+        box-shadow: 4px 4px 4px #131313;
+        vertical-align: middle;
+        color: #838482; }
+        .disp .half .itemDisp .controls .button {
+          vertical-align: middle;
+          cursor: pointer;
+          margin-top: -2px; }
+      .disp .half .itemDisp .names {
+        position: absolute;
+        height: 120px;
+        width: 315px;
+        left: -10px;
+        top: -30px;
+        border: 2px solid #444;
+        background-image: linear-gradient(to bottom, #222, #181818, #222);
+        text-align: left;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-shadow: 4px 4px 4px #161616; }
+        .disp .half .itemDisp .names .commonName {
+          display: block;
+          width: 100%;
+          margin: 6px 0 2px;
+          color: #ddd;
+          font-size: 26px;
+          text-shadow: 3px 3px 3px #666;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        .disp .half .itemDisp .names .latinName {
+          display: block;
+          width: 100%;
+          margin: 4px 0 0 2%;
+          color: #eee;
+          font-size: 18px;
+          text-shadow: 2px 2px 2px #666;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+      .disp .half .itemDisp .mapWrap {
+        position: absolute;
+        height: 110px;
+        width: 180px;
+        right: -2px;
+        top: -20px;
+        border: 2px solid #343434;
+        background-image: linear-gradient(to bottom, #222, #000, #222);
+        box-shadow: 4px 4px 4px #111; }
+        .disp .half .itemDisp .mapWrap .map {
+          display: block;
+          width: 140px;
+          height: 70px;
+          margin: 20px;
+          background-repeat: no-repeat;
+          background-position: -61px -37px;
+          background-size: 400% auto;
+          opacity: 0.7; }
+      .disp .half .itemDisp .tree {
+        display: block;
+        width: 100%;
+        height: 35px;
+        margin: 120px 0 0 10px;
+        color: #bbb;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-shadow: 2px 2px 2px #666; }
+      .disp .half .itemDisp .pictures {
+        display: block;
+        width: 100%;
+        height: calc(100% - 165px); }
+        .disp .half .itemDisp .pictures .detailsPicReadDivWrap {
+          display: inline-block;
+          width: 33.33%;
+          height: 33.33%;
+          padding: 10px; }
+        .disp .half .itemDisp .pictures .detailsPicReadDiv {
+          display: block;
+          background-image: linear-gradient(to bottom, #181818, #111, #181818);
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          vertical-align: middle;
+          border: 2px solid #242424;
+          white-space: nowrap;
+          box-shadow: 0 0 83px #000;
+          position: relative; }
+          .disp .half .itemDisp .pictures .detailsPicReadDiv .detailsPicReadHelper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle; }
+          .disp .half .itemDisp .pictures .detailsPicReadDiv img {
+            /*display: none;*/
+            max-width: 95%;
+            max-height: 95%;
+            vertical-align: middle;
+            box-shadow: 0 0 83px #000; }
+
+.fade-enter {
+  right: 100px; }
+
+.fade-enter-active {
+  right: 0;
+  transition: .5s ease-in all; }
+
+/*------------------------------------ Nomenclature*/
+.treeItem {
+  display: block;
+  margin-top: 20px;
+  cursor: pointer; }
+
+.treeItem .nodeDisplay {
+  display: block;
+  color: #ccc; }
+
+.treeItem.rankID27 .nodeDisplay {
+  color: #ffc4ba; }
+
+.treeItem.rankID30 .nodeDisplay {
+  color: #ffc4ba; }
+
+.treeItem.rankID50 .nodeDisplay {
+  color: #ffc4ba; }
+
+.treeItem.rankID60 .nodeDisplay {
+  color: #ffc4ba; }
+
+.treeItem.rankID100 .nodeDisplay {
+  color: #ffd5a3; }
+
+.treeItem.rankID140 .nodeDisplay {
+  color: #c8cc56; }
+
+.treeItem.rankID180 .nodeDisplay {
+  color: #91cc52; }
+
+.treeItem.existent .nodeDisplay {
+  color: #c8ecff; }
+
+.treeItem .treepictures {
+  display: inline-block;
+  margin-top: 0;
+  padding-top: 6px;
+  border-top: 1px solid #444;
+  min-width: 300px; }
+
+.treeItem.existent .treepictures {
+  border-top: 1px solid #3d515d; }
+
+.treeItem .treepictures img {
+  margin-right: 20px;
+  height: 40px;
+  width: auto;
+  border: 1px solid #555; }
+
+.treeItem.existent .treepictures img {
+  border: 1px solid #4e6877; }
+
+.treeItem .treepictures.rankID220 img {
+  height: 80px; }
+
+.treeItem .treepictures.rankID230 img {
+  height: 80px; }
+
+.treeItem .treepictures.rankID240 img {
+  height: 80px; }
+
+.treeItem .nodeContent {
+  display: block;
+  padding-left: 20px;
+  border-left: 1px solid #444; }
+
+.treeItem .nodeContent.rankID140 {
+  /*padding-bottom: 20px;*/ }
+
+.treeItem .LatinName {
+  opacity: .7; }
+
+.treeItem .existentNumber {
+  opacity: .9; }
+
+/*------------------------------------ Filter*/
+@keyframes scaleIn {
+  0% {
+    max-height: 0;
+    display: block; }
+  100% {
+    max-height: 100%;
+    display: block; } }
+@keyframes scaleOut {
+  0% {
+    max-height: 100%;
+    display: block; }
+  100% {
+    max-height: 0;
+    display: none; } }
+@keyframes moveRightLeft {
+  0% {
+    opacity: 0;
+    transform: scale(0) translate(0%, 0%) rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+  70% {
+    opacity: 0.5;
+    transform: scale(0.3) translate(0%, 0%) rotateX(0) rotateY(0) rotateZ(0); }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(0%, 0%) rotateX(0) rotateY(0) rotateZ(0); } }
+
+/*# sourceMappingURL=App.css.map */
